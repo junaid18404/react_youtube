@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import SearchBar from "./components/searchBar";
 import YoutubeService from "./services/youtubeService";
+import VideosList from "./components/videosList";
 
 function App() {
+    const [videosList, setVideosList] = useState([]);
+
     const searchVideos = async (searchValue) => {
         const searchQueryResponse = await new YoutubeService().getVideosByQuery(searchValue);
-        console.log(extractVideosListFromResponse(searchQueryResponse));
+        const videosList = extractVideosListFromResponse(searchQueryResponse);
+        setVideosList(videosList);
     };
 
     const extractVideosListFromResponse = (rawData) => {
@@ -19,6 +23,9 @@ function App() {
                 <h1>Youtube</h1>
             </header>
             <SearchBar searchFormVideos={(searchValue) => searchVideos(searchValue)}/>
+            <br/>
+            <br/>
+            {videosList.length > 0 && <VideosList videoslist={videosList}/>}
         </div>
     );
 }
