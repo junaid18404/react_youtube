@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SearchBar from "./components/searchBar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const searchVideos = (searchValue) => {
+
+    };
+
+    return (
+        <div className="App container">
+            <header>
+                <h1>Youtube</h1>
+            </header>
+            <SearchBar searchFormVideos={(searchValue) => searchVideos(searchValue)}/>
+        </div>
+    );
 }
 
 export default App;
