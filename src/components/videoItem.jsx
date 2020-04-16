@@ -5,7 +5,9 @@ export default function VideoItem(props) {
 
     const playVideo = () => {
         console.log(props.videoItemDetails);
+        props.playVideo(props.videoItemDetails.id.videoId)
     };
+
     const imageStyle = {
         width: "210px",
         height: "140px"

@@ -5,7 +5,9 @@ export default function VideosList(props) {
     return (
         <div className='row'>
             {props.videoslist.map((videoItemData,index) => <div className='col-3' key={index}><VideoItem
-                videoItemDetails={videoItemData}/></div>)}
+                videoItemDetails={videoItemData}
+                playVideo={props.playVideo}
+            /></div>)}
         </div>
     );
 }
