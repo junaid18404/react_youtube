@@ -1,10 +1,16 @@
 import React from 'react';
 import './App.css';
 import SearchBar from "./components/searchBar";
+import YoutubeService from "./services/youtubeService";
 
 function App() {
-    const searchVideos = (searchValue) => {
+    const searchVideos = async (searchValue) => {
+        const searchQueryResponse = await new YoutubeService().getVideosByQuery(searchValue);
+        console.log(extractVideosListFromResponse(searchQueryResponse));
+    };
 
+    const extractVideosListFromResponse = (rawData) => {
+        return rawData['data']['items']
     };
 
     return (
