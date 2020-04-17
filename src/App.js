@@ -4,6 +4,7 @@ import SearchBar from "./components/searchBar";
 import YoutubeService from "./services/youtubeService";
 import VideosList from "./components/videosList";
 import WatchVideo from "./components/watchVideo";
+import PageHeader from "./components/core/pageHeader";
 
 function App() {
     const [videosList, setVideosList] = useState([]);
@@ -24,15 +25,15 @@ function App() {
         setVideoDetails(videoDetails);
     };
     return (
-        <div className="App container">
-            <header>
-                <h1>Youtube</h1>
-            </header>
-            <SearchBar searchFormVideos={(searchValue) => searchVideos(searchValue)}/>
-            <br/>
-            <br/>
-            {videosList.length > 0 && videoDetails === null && <VideosList playVideo={playVideo} videoslist={videosList}/>}
-            {videosList.length > 0 && videoDetails !== null && <WatchVideo videoDetails={videoDetails} playVideo={playVideo} videosList={videosList}/>}
+        <div id='App'>
+            <PageHeader/>
+            <div className="container">
+                <SearchBar searchFormVideos={(searchValue) => searchVideos(searchValue)}/>
+                <br/>
+                <br/>
+                {videosList.length > 0 && videoDetails === null && <VideosList playVideo={playVideo} videoslist={videosList}/>}
+                {videosList.length > 0 && videoDetails !== null && <WatchVideo videoDetails={videoDetails} playVideo={playVideo} videosList={videosList}/>}
+            </div>
         </div>
     );
 }
