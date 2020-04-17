@@ -5,8 +5,7 @@ export default function VideoItem(props) {
     const { title, publishedAt, thumbnails } = props.videoItemDetails.snippet;
 
     const playVideo = () => {
-        console.log(props.videoItemDetails);
-        props.playVideo(props.videoItemDetails.id.videoId)
+        props.playVideo(props.videoItemDetails)
     };
 
     const imageStyle = {
