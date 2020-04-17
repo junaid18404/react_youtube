@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function VideoPlayer(props) {
     const videoPlayerStyle = {
-        width: '80%',
+        width: '100%',
         height: '480px'
     };
     return (

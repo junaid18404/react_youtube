@@ -32,7 +32,7 @@ function App() {
             <br/>
             <br/>
             {videosList.length > 0 && videoId === '' && <VideosList playVideo={playVideo} videoslist={videosList}/>}
-            {videosList.length > 0 && videoId !== '' && <WatchVideo videoId={videoId}/>}
+            {videosList.length > 0 && videoId !== '' && <WatchVideo videoId={videoId} playVideo={playVideo} videosList={videosList}/>}
         </div>
     );
 }
