@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import SearchBar from "./components/searchBar";
+import SearchBar from "./components/core/searchBar";
 import YoutubeService from "./services/youtubeService";
 import VideosList from "./components/videosList";
 import WatchVideo from "./components/watchVideo";
