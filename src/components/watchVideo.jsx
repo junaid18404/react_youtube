@@ -14,7 +14,7 @@ export default function WatchVideo(props) {
                     <VideoDetails videoDetails={videoDetails}/>
                 </div>
                 <div className='col-3'>
-                    <RightRail videosList={videosList}/>
+                    <RightRail playVideo={props.playVideo} videosList={videosList}/>
                 </div>
             </div>
         </div>

@@ -27,6 +27,7 @@ function App() {
     return (
         <div id='App'>
             <PageHeader/>
+            <br/>
             <div className="container">
                 <SearchBar searchFormVideos={(searchValue) => searchVideos(searchValue)}/>
                 <br/>
